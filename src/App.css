@@ -1,38 +1,246 @@
-.App {
-  text-align: center;
+*,
+.tr {
+  transition: all 1.2s ease-in;
+  transition-delay: 200ms;
+}
+html {
+  scroll-behavior: smooth;
+}
+.grid-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  z-index: 11;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+}
+.pr {
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.c-box {
+  border: 2px solid #000000;
+}
+.border-c {
+  border-radius: 15px;
+}
+.ht-100 {
+  height: 100px;
+}
+.ht-150 {
+  height: 150px;
+}
+.ga {
+  grid-column: 1/4;
+}
+.a1 {
+  animation: anim linear 2s;
+}
+.a2 {
+  animation: anim linear 2s;
+  animation-delay: 500ms;
+}
+.a3 {
+  animation: anim linear 2s;
+  animation-delay: 600ms;
+}
+.a4 {
+  animation: anim linear 2s;
+  animation-delay: 200ms;
+}
+.a5 {
+  animation: anim linear 2s;
+  animation-delay: 700ms;
+}
+.a6 {
+  animation: anim linear 2s;
+  animation-delay: 400ms;
+}
+.ga-1 {
+  grid-column: 1/3;
+}
+.ga-2 {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+.ga-3 {
+  grid-column: 1/3;
+  grid-row: 3/4;
+}
+.ga-4 {
+  grid-column: 3/4;
+  grid-row: 3/4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bg-1 {
+  background-color: rgba(255, 220, 226, 0.692);
+  border: 0;
+}
+.bg-2 {
+  background-color: rgba(150, 54, 70, 0.692);
+  border: 0;
+  width: 100%;
+}
+.bg-3 {
+  background-color: rgba(54, 150, 70, 0.884);
+  border: 0;
+}
+.bg-4 {
+  background-color: rgba(184, 115, 76, 0.884);
+  border: 0;
+  width: 80%;
+  height: 300px;
+  margin: auto;
+}
+.c-box svg {
+  font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sm-box {
+  background-color: blue;
   color: white;
+  border: 0;
+  width: 95%;
+  margin: auto;
+}
+.sm-box p {
+  font-weight: 100;
 }
 
-.App-link {
-  color: #61dafb;
+.sm-box-1 {
+  background-color: yellow;
+  color: #000000;
+  border: 0;
+  width: 95%;
+  margin: auto;
+}
+.trend {
+  cursor: pointer;
+}
+.dp {
+  width: 100px;
 }
 
-@keyframes App-logo-spin {
+/* after transition */
+.dpt {
+  width: 30px;
+  transform: translate(160px, -10px);
+}
+.dpname {
+  width: 200px;
+}
+
+.dst {
+  transform: translate(70px, -30px);
+  font-size: 13px;
+}
+
+.dis-none {
+  opacity: 0;
+  user-select: none;
+  transform: scale(0) rotateY(180deg);
+}
+.be {
+  transform: translate(250px, 5px);
+  z-index: 11;
+}
+
+.wh {
+  transform: translate(400px, 50px);
+  transition-delay: 200ms;
+  z-index: 99;
+}
+.pst {
+  width: 300px;
+}
+.ps {
+  transform: translate(860px, 20px);
+}
+
+.gd-1 {
+  transform: translate(860px, 20px);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.gat {
+  grid-column: 1/4;
+}
+.gat-1 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.gat-1t {
+  grid-column: 2 /4;
+  grid-row: 2/3;
+}
+.ga1t {
+  transform: translate(405px, 20px);
+  z-index: 99;
+}
+.ga2t {
+  z-index: 99;
+
+  transform: translate(405px, 20px);
+}
+
+.bgt-1 {
+  background-color: #28283c;
+}
+
+.bg-w {
+  background-color: #fff;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid black;
+  opacity: 1;
+}
+
+.bg-7 {
+  background-color: #373752;
+  height: 300px;
+  position: absolute !important;
+  top: 23%;
+  left: -5%;
+  animation: flips linear 1s;
+}
+@keyframes flips {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: rotateX(180deg);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes anim {
+  0% {
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  100% {
+    opacity: 1;
+
+    transform: scale3d(1, 1, 1);
   }
 }
